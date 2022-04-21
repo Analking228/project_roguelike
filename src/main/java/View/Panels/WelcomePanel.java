@@ -1,12 +1,9 @@
 package View.Panels;
 
 import View.Frames.MainFrame;
-import jdk.jfr.internal.tool.Main;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class        WelcomePanel extends JPanel {
     MainFrame       observer;
@@ -20,6 +17,7 @@ public class        WelcomePanel extends JPanel {
         this.setLayout(null);
         this.setBackground(Color.lightGray);
         JButton selectHeroBtn = new JButton("Select a Hero");
+        selectHeroBtn.addActionListener(e -> this.createSelectHeroPanel());
         selectHeroBtn.setBounds(frameSizeX / 2 - frameSizeX / 4, frameSizeY / 3 - frameSizeY / 8, frameSizeX / 2, frameSizeY / 8);
         this.add(selectHeroBtn);
         JButton settingsBtn = new JButton("Settings");
@@ -33,5 +31,9 @@ public class        WelcomePanel extends JPanel {
 
     private void    createSettingsFrame() {
         this.observer.createSettingsFrame();
+    }
+
+    private void    createSelectHeroPanel() {
+        this.observer.createSelectHeroPanel();
     }
 }
