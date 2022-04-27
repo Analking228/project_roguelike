@@ -39,11 +39,6 @@ public class        Warrior implements HeroClass {
 
     }
 
-    @Override
-    public String getClassDesc() {
-        return "Veeeeeeeeery\nVeeeeeeeeery\nVeeeeeeeeery\nVeeeeeeeeery\nLong and boring";
-    }
-
     public Artifact getRightHand() {
         return rightHand;
     }

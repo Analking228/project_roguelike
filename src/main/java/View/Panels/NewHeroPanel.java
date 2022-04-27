@@ -1,15 +1,20 @@
 package View.Panels;
 
+import Model.HeroClasses.HeroClass;
 import View.Frames.MainFrame;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Objects;
 
-public class            NewHeroPanel extends JPanel {
+public class            NewHeroPanel extends JPanel implements ActionListener {
     JTextField          nameTF;
     JTextField          titleTF;
     JComboBox<String>   classComboBox;
+    JTextArea           classDescTA;
 
     public NewHeroPanel() {
         this.setLayout(new GridBagLayout());
@@ -30,20 +35,32 @@ public class            NewHeroPanel extends JPanel {
         c.gridheight = 1;
         c.gridwidth = 3;
         this.add(namePanel, c);
-        String[]        classes = new String[] {"Warrior"/*, "Thief", "Mage"*/};
+        String[]        classes = new String[] {"Warrior", "Thief", "Mage"};
         this.classComboBox = new JComboBox<>(classes);
+        this.classComboBox.addActionListener(this);
         c.gridx = 1;
         c.gridy = 1;
         c.gridheight = 1;
         c.gridwidth = 3;
         c.fill = GridBagConstraints.HORIZONTAL;
         this.add(this.classComboBox, c);
-        JTextArea       classSubscriptionTA = new JTextArea("");
+        this.classDescTA = new JTextArea("");
+        this.classDescTA.setEditable(false);
         c.gridx = 1;
         c.gridy = 2;
         c.gridheight = 1;
         c.gridwidth = 3;
         c.fill = GridBagConstraints.BOTH;
-        this.add(classSubscriptionTA, c);
+        this.add(this.classDescTA, c);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == this.classComboBox) {
+            if (Objects.equals(classComboBox.getSelectedItem(), new String("Warrior")))
+                this.classDescTA.setText(HeroClass.getClassDesc(HeroClass.WARRIOR));
+            else
+                this.classDescTA.setText(HeroClass.getClassDesc(1));
+        }
     }
 }
