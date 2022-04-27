@@ -30,7 +30,7 @@ public class            NewHeroPanel extends JPanel {
         c.gridheight = 1;
         c.gridwidth = 3;
         this.add(namePanel, c);
-        String[]        classes = new String[] {"Warrior", "Thief", "Mage"};
+        String[]        classes = new String[] {"Warrior"/*, "Thief", "Mage"*/};
         this.classComboBox = new JComboBox<>(classes);
         c.gridx = 1;
         c.gridy = 1;

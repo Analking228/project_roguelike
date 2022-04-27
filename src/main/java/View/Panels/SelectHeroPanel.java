@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotNull;
 import javafx.scene.control.TitledPane;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class            SelectHeroPanel extends JPanel {
