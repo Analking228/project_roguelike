@@ -38,44 +38,4 @@ public class        Warrior implements HeroClass {
     public void takeXP(int xp) {
 
     }
-
-    public Artifact getRightHand() {
-        return rightHand;
-    }
-
-    public void setRightHand(Artifact rightHand) {
-        this.rightHand = rightHand;
-    }
-
-    public Artifact getLeftHand() {
-        return leftHand;
-    }
-
-    public void setLeftHand(Artifact leftHand) {
-        this.leftHand = leftHand;
-    }
-
-    public Artifact getArmour() {
-        return armour;
-    }
-
-    public void setArmour(Artifact armour) {
-        this.armour = armour;
-    }
-
-    public Artifact getHelmet() {
-        return helmet;
-    }
-
-    public void setHelmet(Artifact helmet) {
-        this.helmet = helmet;
-    }
-
-    public int getXp() {
-        return xp;
-    }
-
-    public void setXp(int xp) {
-        this.xp = xp;
-    }
 }
