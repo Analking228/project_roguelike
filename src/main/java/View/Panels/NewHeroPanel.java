@@ -1,7 +1,6 @@
 package View.Panels;
 
 import Model.HeroClasses.HeroClass;
-import View.Frames.MainFrame;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -67,7 +66,7 @@ public class            NewHeroPanel extends JPanel implements ActionListener {
             if (Objects.equals(classComboBox.getSelectedItem(), new String("Warrior")))
                 this.classDescTA.setText(HeroClass.getClassDesc(HeroClass.WARRIOR));
             else
-                this.classDescTA.setText(HeroClass.getClassDesc(1));
+                this.classDescTA.setText(HeroClass.getClassDesc(HeroClass.ROGUE));
         }
     }
 }
