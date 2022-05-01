@@ -3,6 +3,7 @@ package View.Panels;
 import View.Frames.MainFrame;
 import jakarta.validation.constraints.NotNull;
 import javafx.scene.control.TitledPane;
+import jdk.jfr.internal.tool.Main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +22,7 @@ public class            SelectHeroPanel extends JPanel {
         this.setLayout(new BorderLayout());
         this.add(scrollPane, BorderLayout.WEST);
         this.add(scrollPane2, BorderLayout.EAST);
-        this.newHeroPanel = createCentralInfoPanel();
+        this.newHeroPanel = createCentralInfoPanel(observer);
         this.add(this.newHeroPanel, BorderLayout.CENTER);
         JPanel          buttonPanel = new JPanel();
         JButton         selectHeroBtn = new JButton("Select Hero");
@@ -33,7 +34,7 @@ public class            SelectHeroPanel extends JPanel {
         this.requestFocus();
     }
 
-    private NewHeroPanel      createCentralInfoPanel() {
-        return new NewHeroPanel();
+    private NewHeroPanel      createCentralInfoPanel(MainFrame observer) {
+        return new NewHeroPanel(observer);
     }
 }

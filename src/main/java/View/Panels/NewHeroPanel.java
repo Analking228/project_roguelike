@@ -1,6 +1,7 @@
 package View.Panels;
 
 import Model.HeroClasses.HeroClass;
+import View.Frames.MainFrame;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -10,13 +11,15 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 public class            NewHeroPanel extends JPanel implements ActionListener {
+    MainFrame           observer;
     JTextField          nameTF;
     JTextField          titleTF;
     JComboBox<String>   classComboBox;
     JTextArea           classDescTA;
     JButton             createNewHeroBtn;
 
-    public NewHeroPanel() {
+    public NewHeroPanel(MainFrame           observer) {
+
         this.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         this.setBorder(new TitledBorder("Hero info"));
@@ -75,6 +78,8 @@ public class            NewHeroPanel extends JPanel implements ActionListener {
             else
                 this.classDescTA.setText(HeroClass.getClassDesc(HeroClass.ROGUE));
         }
-//        if (e.getSource())
+//        if (e.getSource() == this.createNewHeroBtn) {
+//            this.nameTF
+//        }
     }
 }
