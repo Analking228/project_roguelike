@@ -9,4 +9,9 @@ public class        Warrior extends HeroClass {
         this.attack = 5;
         this.defense = 5;
     }
+
+    @Override
+    public String battleCry() {
+        return "Arrrrrght! WANNA DICKS";
+    }
 }

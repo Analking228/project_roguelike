@@ -25,9 +25,7 @@ public class            SelectHeroPanel extends JPanel {
         this.add(this.newHeroPanel, BorderLayout.CENTER);
         JPanel          buttonPanel = new JPanel();
         JButton         selectHeroBtn = new JButton("Select Hero");
-        JButton         createNewHeroBtn = new JButton("Create new Hero");
         buttonPanel.add(selectHeroBtn);
-        buttonPanel.add(createNewHeroBtn);
         this.add(buttonPanel, BorderLayout.SOUTH);
 
         this.setFocusable(true);

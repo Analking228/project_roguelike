@@ -14,6 +14,7 @@ public class            NewHeroPanel extends JPanel implements ActionListener {
     JTextField          titleTF;
     JComboBox<String>   classComboBox;
     JTextArea           classDescTA;
+    JButton             createNewHeroBtn;
 
     public NewHeroPanel() {
         this.setLayout(new GridBagLayout());
@@ -45,14 +46,20 @@ public class            NewHeroPanel extends JPanel implements ActionListener {
         c.gridwidth = 3;
         c.fill = GridBagConstraints.HORIZONTAL;
         this.add(this.classComboBox, c);
+        JPanel      textAreaButtonPanel = new JPanel();
+        textAreaButtonPanel.setLayout(new BoxLayout(textAreaButtonPanel, BoxLayout.Y_AXIS));
+        this.createNewHeroBtn = new JButton("Create new Hero");
         this.classDescTA = new JTextArea(HeroClass.getClassDesc(HeroClass.WARRIOR));
         this.classDescTA.setEditable(false);
+        textAreaButtonPanel.add(classDescTA);
+        textAreaButtonPanel.add(createNewHeroBtn);
         c.gridx = 1;
         c.gridy = 2;
         c.gridheight = 1;
         c.gridwidth = 3;
         c.fill = GridBagConstraints.BOTH;
-        this.add(this.classDescTA, c);
+        this.add(textAreaButtonPanel, c);
+
     }
 
     private void clearTF(JTextField tf) {
@@ -68,5 +75,6 @@ public class            NewHeroPanel extends JPanel implements ActionListener {
             else
                 this.classDescTA.setText(HeroClass.getClassDesc(HeroClass.ROGUE));
         }
+//        if (e.getSource())
     }
 }

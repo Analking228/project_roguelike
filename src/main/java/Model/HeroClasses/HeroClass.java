@@ -7,11 +7,15 @@ abstract public class   HeroClass {
     public static int   WARRIOR = 0;
     public static int   ROGUE = 1;
     public static int   MAGE = 2;
+    protected String    name;
+    protected String    title;
     protected Artifact  hand;
     protected Artifact  armour;
     protected Artifact  helmet;
     protected int       level, xp, hp;
     protected int       attack, defense;
+
+    public abstract String       battleCry();
 
     public int          attack(){
         return attack;
@@ -25,6 +29,15 @@ abstract public class   HeroClass {
     public void         takeXP(int xp){
         this.xp += xp;
     }
+
+    public void         setName(String name) {
+        this.name = name;
+    }
+
+    public void         setTitle(String title) {
+        this.title = title;
+    }
+
     public static String   getClassDesc(int type) {
         if (type == WARRIOR)
             return "Veeeeeeeeery\nVeeeeeeeeery\nVeeeeeeeeery\nVeeeeeeeeery\nLong and boring description of warrior";

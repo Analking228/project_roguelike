@@ -1,4 +1,7 @@
 package Controller;
 
-public class GameController {
+import Model.HeroClasses.HeroClass;
+
+public class    GameController {
+    HeroClass   hero;
 }
