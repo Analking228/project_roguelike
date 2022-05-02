@@ -1,5 +1,6 @@
 package View.Panels;
 
+import Controller.FrameController;
 import View.Frames.MainFrame;
 import jakarta.validation.constraints.NotNull;
 import javafx.scene.control.TitledPane;
@@ -9,10 +10,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class            SelectHeroPanel extends JPanel {
-    MainFrame           observer;
-    NewHeroPanel        newHeroPanel;
+    FrameController     observer;
 
-    public              SelectHeroPanel(MainFrame o) {
+    public              SelectHeroPanel(FrameController o) {
         this.observer = o;
         String[]        createdHeroes = {"John the Nigger", "Pavel the Greatest", "John the Walker", "Pinus", "Pinus", "Pinus", "Pinus", "Pinus", "Pinus", "Pinus", "Pinus", "Pinus", "Pinus"};
         JList<String>   list = new JList<>(createdHeroes);
@@ -22,8 +22,7 @@ public class            SelectHeroPanel extends JPanel {
         this.setLayout(new BorderLayout());
         this.add(scrollPane, BorderLayout.WEST);
         this.add(scrollPane2, BorderLayout.EAST);
-        this.newHeroPanel = createCentralInfoPanel(observer);
-        this.add(this.newHeroPanel, BorderLayout.CENTER);
+        this.add(this.observer.newHeroPanel(), BorderLayout.CENTER);
         JPanel          buttonPanel = new JPanel();
         JButton         selectHeroBtn = new JButton("Select Hero");
         buttonPanel.add(selectHeroBtn);
@@ -32,9 +31,5 @@ public class            SelectHeroPanel extends JPanel {
         this.setFocusable(true);
         this.requestFocusInWindow();
         this.requestFocus();
-    }
-
-    private NewHeroPanel      createCentralInfoPanel(MainFrame observer) {
-        return new NewHeroPanel(observer);
     }
 }

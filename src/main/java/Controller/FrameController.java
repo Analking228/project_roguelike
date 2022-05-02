@@ -2,6 +2,7 @@ package Controller;
 
 import View.Frames.MainFrame;
 import View.Frames.SettingsFrame;
+import View.Panels.NewHeroPanel;
 import View.Panels.SelectHeroPanel;
 import View.Panels.WelcomePanel;
 
@@ -10,7 +11,7 @@ import java.awt.*;
 
 public class        FrameController {
     MainFrame       mainFrame;
-    private int     frameSizeX = 800;
+    private int     frameSizeX = 750;
     private int     frameSizeY = 500;
     private JPanel  activePanel;
     JFrame          settingsFrame;
@@ -28,10 +29,14 @@ public class        FrameController {
 
     public void createSelectionPanel() {
         mainFrame.remove(this.activePanel);
-        this.activePanel = new SelectHeroPanel(mainFrame);
+        this.activePanel = new SelectHeroPanel(this);
         mainFrame.add(this.activePanel, BorderLayout.CENTER);
         mainFrame.invalidate();
         mainFrame.validate();
+    }
+
+    public JPanel   newHeroPanel() {
+        return new NewHeroPanel(this);
     }
 
     public JPanel   getActivePanel() {
