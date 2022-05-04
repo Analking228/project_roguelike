@@ -1,16 +1,17 @@
 package View.Panels;
 
+import Controller.FrameController;
 import Controller.GameController;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class        GamePanel extends JPanel {
-    GameController  observerController;
+    FrameController observer;
+    GameController  gameController;
 
-    public          GamePanel() {
-        setLayout(new GridBagLayout());
-        GridBagConstraints c = new GridBagConstraints();
-
+    public          GamePanel(FrameController observer, GameController gameController) {
+        this.observer = observer;
+        this.setLayout(new GridLayout(0,2));
     }
 }

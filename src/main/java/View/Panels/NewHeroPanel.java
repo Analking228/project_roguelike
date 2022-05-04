@@ -2,6 +2,7 @@ package View.Panels;
 
 import Controller.FrameController;
 import Model.HeroClasses.HeroClass;
+import Model.HeroClasses.HeroFactory;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -10,13 +11,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
-public class            NewHeroPanel extends JPanel implements ActionListener {
-    FrameController     observer;
-    JTextField          nameTF;
-    JTextField          titleTF;
-    JComboBox<String>   classComboBox;
-    JTextArea           classDescTA;
-    JButton             createNewHeroBtn;
+public class                    NewHeroPanel extends JPanel implements ActionListener {
+    FrameController             observer;
+    private JTextField          nameTF;
+    private JTextField          titleTF;
+    private JComboBox<String>   classComboBox;
+    private JTextArea           classDescTA;
+    private JButton             createNewHeroBtn;
 
     public NewHeroPanel(FrameController           observer) {
         this.observer = observer;
@@ -77,8 +78,8 @@ public class            NewHeroPanel extends JPanel implements ActionListener {
             else
                 this.classDescTA.setText(HeroClass.getClassDesc(HeroClass.ROGUE));
         }
-//        if (e.getSource() == this.createNewHeroBtn) {
-//            this.nameTF
-//        }
+        if (e.getSource() == this.createNewHeroBtn) {
+            observer.createGamePanel(HeroFactory.newHero(this.nameTF.getText(), this.titleTF.getText(), null));
+        }
     }
 }

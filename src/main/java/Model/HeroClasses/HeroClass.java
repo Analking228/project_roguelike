@@ -33,9 +33,15 @@ abstract public class   HeroClass {
     public void         setName(String name) {
         this.name = name;
     }
+    public String       getName() {
+        return this.name;
+    }
 
     public void         setTitle(String title) {
         this.title = title;
+    }
+    public String       getTitle() {
+        return this.title;
     }
 
     public static String   getClassDesc(int type) {

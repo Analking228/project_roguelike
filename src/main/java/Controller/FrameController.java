@@ -1,7 +1,9 @@
 package Controller;
 
+import Model.HeroClasses.HeroClass;
 import View.Frames.MainFrame;
 import View.Frames.SettingsFrame;
+import View.Panels.GamePanel;
 import View.Panels.NewHeroPanel;
 import View.Panels.SelectHeroPanel;
 import View.Panels.WelcomePanel;
@@ -30,6 +32,15 @@ public class        FrameController {
     public void createSelectionPanel() {
         mainFrame.remove(this.activePanel);
         this.activePanel = new SelectHeroPanel(this);
+        mainFrame.add(this.activePanel, BorderLayout.CENTER);
+        mainFrame.invalidate();
+        mainFrame.validate();
+    }
+
+    public void     createGamePanel(HeroClass hero) {
+        System.out.println(hero.getName() + ' ' + hero.getTitle() + " is here");
+        mainFrame.remove(this.activePanel);
+        this.activePanel = new GamePanel(this, new GameController(hero));
         mainFrame.add(this.activePanel, BorderLayout.CENTER);
         mainFrame.invalidate();
         mainFrame.validate();
