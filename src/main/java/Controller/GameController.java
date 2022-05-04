@@ -2,32 +2,24 @@ package Controller;
 
 import Model.HeroClasses.HeroClass;
 import View.Panels.ControlsPanel;
-import View.Panels.FieldPanel;
-
-import javax.swing.*;
+import View.Panels.GameFieldPanel;
 
 public class        GameController {
     HeroClass       hero;
-    FieldPanel      fieldPanel;
+    GameFieldPanel  gameFieldPanel;
     ControlsPanel   controlsPanel;
 
     public      GameController(HeroClass hero) {
-
+        this.hero = hero;
+        this.gameFieldPanel = new GameFieldPanel(this, hero);
+        this.controlsPanel = new ControlsPanel(this, hero);
     }
 
-    public FieldPanel getFieldPanel() {
-        return fieldPanel;
-    }
-
-    public void setFieldPanel(FieldPanel fieldPanel) {
-        this.fieldPanel = fieldPanel;
+    public GameFieldPanel getGameFieldPanel() {
+        return this.gameFieldPanel;
     }
 
     public ControlsPanel getControlsPanel() {
         return controlsPanel;
-    }
-
-    public void setControlsPanel(ControlsPanel controlsPanel) {
-        this.controlsPanel = controlsPanel;
     }
 }

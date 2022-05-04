@@ -53,6 +53,7 @@ public class                    NewHeroPanel extends JPanel implements ActionLis
         JPanel      textAreaButtonPanel = new JPanel();
         textAreaButtonPanel.setLayout(new BoxLayout(textAreaButtonPanel, BoxLayout.Y_AXIS));
         this.createNewHeroBtn = new JButton("Create new Hero");
+        this.createNewHeroBtn.addActionListener(e -> observer.createGamePanel(HeroFactory.newHero(this.nameTF.getText(), this.titleTF.getText(), null)));
         this.classDescTA = new JTextArea(HeroClass.getClassDesc(HeroClass.WARRIOR));
         this.classDescTA.setEditable(false);
         textAreaButtonPanel.add(classDescTA);
@@ -77,9 +78,6 @@ public class                    NewHeroPanel extends JPanel implements ActionLis
                 this.classDescTA.setText(HeroClass.getClassDesc(HeroClass.WARRIOR));
             else
                 this.classDescTA.setText(HeroClass.getClassDesc(HeroClass.ROGUE));
-        }
-        if (e.getSource() == this.createNewHeroBtn) {
-            observer.createGamePanel(HeroFactory.newHero(this.nameTF.getText(), this.titleTF.getText(), null));
         }
     }
 }

@@ -40,6 +40,27 @@ abstract public class   HeroClass {
     public void         setTitle(String title) {
         this.title = title;
     }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
     public String       getTitle() {
         return this.title;
     }
