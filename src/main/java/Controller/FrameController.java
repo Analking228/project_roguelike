@@ -17,6 +17,7 @@ public class        FrameController {
     private int     frameSizeY = 500;
     private JPanel  activePanel;
     JFrame          settingsFrame;
+    private GameController  gameController;
 
     public FrameController() {
         this.activePanel = new WelcomePanel(this, frameSizeX, frameSizeY);
@@ -40,7 +41,8 @@ public class        FrameController {
     public void     createGamePanel(HeroClass hero) {
         System.out.println(hero.getName() + ' ' + hero.getTitle() + " is here");
         mainFrame.remove(this.activePanel);
-        this.activePanel = new GamePanel(this, new GameController(hero));
+        gameController =  new GameController(hero, frameSizeX / 3 * 2);
+        this.activePanel = new GamePanel(this, gameController);
         mainFrame.add(this.activePanel, BorderLayout.CENTER);
         mainFrame.invalidate();
         mainFrame.validate();

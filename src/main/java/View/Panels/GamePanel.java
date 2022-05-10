@@ -18,6 +18,7 @@ public class        GamePanel extends JPanel {
         c.gridx = 0;
         c.gridy = 0;
         c.gridheight = 3;
+        c.gridwidth = 1;
         c.anchor = GridBagConstraints.WEST;
         this.add(gameController.getControlsPanel(), c);
         c.gridx = 1;

@@ -9,9 +9,9 @@ public class        GameController {
     GameFieldPanel  gameFieldPanel;
     ControlsPanel   controlsPanel;
 
-    public      GameController(HeroClass hero) {
+    public      GameController(HeroClass hero, int fieldSize) {
         this.hero = hero;
-        this.gameFieldPanel = new GameFieldPanel(this, hero);
+        this.gameFieldPanel = new GameFieldPanel(500, new MovingDir());
         this.controlsPanel = new ControlsPanel(this, hero);
     }
 

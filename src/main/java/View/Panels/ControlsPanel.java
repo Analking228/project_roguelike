@@ -43,20 +43,21 @@ public class ControlsPanel extends JPanel {
         nameAndTitleTF = new JTextField(hero.getName() + " " + hero.getTitle());
         labelPanel.add(nameAndTitleTF);
         JLabel  levelLlb = new JLabel("level: ");
-        levelTF = new JTextField(hero.getLevel());
+
+        levelTF = new JTextField(String.valueOf(hero.getLevel()));
         labelPanel.add(groupObjects(levelLlb, levelTF));
         JLabel  xpLlb = new JLabel("xp: ");
-        xpTF = new JTextField(hero.getXp());
-        labelPanel.add(groupObjects(levelLlb, xpTF));
+        xpTF = new JTextField(String.valueOf(hero.getXp()));
+        labelPanel.add(groupObjects(xpLlb, xpTF));
         JLabel  hpLlb = new JLabel("hp: ");
-        hpTF = new JTextField(hero.getHp());
-        labelPanel.add(groupObjects(levelLlb, hpTF));
+        hpTF = new JTextField(String.valueOf(hero.getHp()));
+        labelPanel.add(groupObjects(hpLlb, hpTF));
         JLabel  attackLlb = new JLabel("attack: ");
-        attackTF = new JTextField(hero.getAttack());
-        labelPanel.add(groupObjects(levelLlb, attackTF));
+        attackTF = new JTextField(String.valueOf(hero.getAttack()));
+        labelPanel.add(groupObjects(attackLlb, attackTF));
         JLabel  defenseLlb = new JLabel("defense: ");
-        defenseTF = new JTextField(hero.getDefense());
-        labelPanel.add(groupObjects(levelLlb, defenseTF));
+        defenseTF = new JTextField(String.valueOf(hero.getDefense()));
+        labelPanel.add(groupObjects(defenseLlb, defenseTF));
         return labelPanel;
     }
 
