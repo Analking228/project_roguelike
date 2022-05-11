@@ -29,7 +29,8 @@ public class GameFieldPanel extends JPanel implements ActionListener {
 
     public GameFieldPanel(int gameFieldXSize, MovingDir movingDir) {
         this.setLayout(null);
-        FIELD_SIZE = 500;
+        System.out.println("created");
+        FIELD_SIZE = gameFieldXSize;
         CELL_SIZE = FIELD_SIZE / 20;
         this.movingDir = movingDir;
         this.fieldCellX = new int[(FIELD_SIZE / CELL_SIZE) * (FIELD_SIZE / CELL_SIZE)];
@@ -61,6 +62,7 @@ public class GameFieldPanel extends JPanel implements ActionListener {
         }
         timer.start();
         createApple();
+        setVisible(true);
         setFocusable(true);
         requestFocusInWindow();
         requestFocus();

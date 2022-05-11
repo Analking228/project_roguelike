@@ -3,10 +3,7 @@ package Controller;
 import Model.HeroClasses.HeroClass;
 import View.Frames.MainFrame;
 import View.Frames.SettingsFrame;
-import View.Panels.GamePanel;
-import View.Panels.NewHeroPanel;
-import View.Panels.SelectHeroPanel;
-import View.Panels.WelcomePanel;
+import View.Panels.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,8 +39,10 @@ public class        FrameController {
         System.out.println(hero.getName() + ' ' + hero.getTitle() + " is here");
         mainFrame.remove(this.activePanel);
         gameController =  new GameController(hero, frameSizeX / 3 * 2);
-        this.activePanel = new GamePanel(this, gameController);
-        mainFrame.add(this.activePanel, BorderLayout.CENTER);
+        this.activePanel = new GamePanel(this, gameController, hero);
+        mainFrame.add(this.activePanel);
+//        mainFrame.add(this.gameController.getControlsPanel(), BorderLayout.WEST);
+//        mainFrame.add(this.gameController.getGameFieldPanel(), BorderLayout.CENTER);
         mainFrame.invalidate();
         mainFrame.validate();
     }
